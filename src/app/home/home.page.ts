@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { PetsService } from '../services/pets.service';
 import { pets } from '../models/pets';
 import { AlertController } from '@ionic/angular';
+import { cuidadores } from '../models/cuidadores';
+import { CuidadoresService } from '../services/cuidadores.service';
 
 @Component({
   selector: 'app-home',
@@ -12,13 +14,26 @@ import { AlertController } from '@ionic/angular';
 export class HomePage implements OnInit {
 
   public listaPets: pets[] = [];
+  public listaCuidadores: cuidadores[] = [];
 
   constructor(private ptService : PetsService,
+              private cdService : CuidadoresService,
               private alertController : AlertController) {}
 
   ngOnInit() {
     this.buscarPets();
+    this.buscarCuidadores();
   }
+
+  buscarCuidadores(){
+    this.cdService.buscarCuidadores().subscribe(dadosRetorno => {
+      this.listaCuidadores = dadosRetorno.map((registro:any) => (
+        
+      ))
+    })
+  }
+
+
 
   buscarPets(){
     this.ptService.buscarPets().subscribe(dadosRetorno => {

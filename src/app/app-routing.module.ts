@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./pets/cadastro-pets/cadastro-pets.module').then( m => m.CadastroPetsPageModule)
   },
   {
-    path: 'pets/alterar-pets',
+    path: 'pets/alterar-pets/:id',
     loadChildren: () => import('./pets/alterar-pets/alterar-pets.module').then( m => m.AlterarPetsPageModule)
   },
 ];
