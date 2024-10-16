@@ -28,9 +28,39 @@ export class HomePage implements OnInit {
   buscarCuidadores(){
     this.cdService.buscarCuidadores().subscribe(dadosRetorno => {
       this.listaCuidadores = dadosRetorno.map((registro:any) => (
-        
+        {
+          id: registro.payload.doc.id,
+          nome: registro.payload.doc.data()['nome'],
+          telefone: registro.payload.doc.data()['telefone'],
+          experiencia: registro.payload.doc.data()['experiencia'],
+          especialidade: registro.payload.doc.data()['especialidade']
+        }
       ))
     })
+  }
+
+  async daletarCuidadores(id: string){
+    const alert = await this.alertController.create({
+      header: 'Confirmar exclusão deste Cuidador?',
+      buttons: [
+        {
+          text: 'Não',
+          role: 'cancel',
+          handler: () => {
+
+          },
+        },
+        {
+          text: 'Sim',
+          role: 'confirm',
+          handler: () => {
+            this.cdService.deletar(id);
+          },
+        },
+      ],
+    });
+    await alert.present();
+    this.buscarCuidadores();
   }
 
 

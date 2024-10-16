@@ -18,15 +18,15 @@ export class CuidadoresService {
   }
 
   buscarPorId(id: string){
-    return this.afs.collection('pets').doc(id).valueChanges();
+    return this.afs.collection('cuidadores').doc(id).valueChanges();
   }
 
   alterar(cuidador: cuidadores){
-    return this.afs.collection('pets').doc(cuidador.id).update({ ...cuidador });
+    return this.afs.collection('cuidadores').doc(cuidador.id).update({ ...cuidador });
   }
 
   deletar(id: string){
-    return this.afs.doc('pets/' + id).delete();
+    return this.afs.doc('cuidadores/' + id).delete();
   }
 }
 

@@ -19,6 +19,15 @@ const routes: Routes = [
     path: 'pets/alterar-pets/:id',
     loadChildren: () => import('./pets/alterar-pets/alterar-pets.module').then( m => m.AlterarPetsPageModule)
   },
+  {
+    path: 'cuidadores/cadastro-cuidadores',
+    loadChildren: () => import('./cuidadores/cadastro-cuidadores/cadastro-cuidadores.module').then( m => m.CadastroCuidadoresPageModule)
+  },
+  {
+    path: 'cuidadores/alterar-cuidadores/:id',
+    loadChildren: () => import('./cuidadores/alterar-cuidadores/alterar-cuidadores.module').then( m => m.AlterarCuidadoresPageModule)
+  },
+
 ];
 
 @NgModule({
