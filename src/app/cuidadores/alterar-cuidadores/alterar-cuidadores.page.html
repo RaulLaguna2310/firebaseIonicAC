@@ -1,11 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Cuidadores</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <h1 class="ion-text-center">Alterar Cuidadores</h1>
+  <h1 class="ion-text-center">Alterar cadastro do(a) cuidador(a) {{cuidador.nome}}</h1>
 
   <ion-item lines="full">
     <ion-label position="floating">Nome</ion-label>
@@ -19,7 +13,7 @@
 
   <ion-item lines="full">
     <ion-label position="floating">Experiência</ion-label>
-    <ion-input [(ngModel)]="cuidador.experiencia" class="ion-text-right" type="number"></ion-input>
+    <ion-input [(ngModel)]="cuidador.experiencia" class="ion-text-left" type="number"></ion-input>
   </ion-item>
 
   <ion-item lines="full">

@@ -41,7 +41,7 @@ export class HomePage implements OnInit {
 
   async daletarCuidadores(id: string){
     const alert = await this.alertController.create({
-      header: 'Confirmar exclusão deste Cuidador?',
+      header: 'Confirmar exclusão deste cuidador?',
       buttons: [
         {
           text: 'Não',
@@ -81,7 +81,7 @@ export class HomePage implements OnInit {
 
   async daletarPets(id: string){
     const alert = await this.alertController.create({
-      header: 'Confirmar exclusão deste Pet?',
+      header: 'Confirmar exclusão deste pet?',
       buttons: [
         {
           text: 'Não',

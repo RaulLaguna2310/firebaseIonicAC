@@ -14,7 +14,6 @@ export class CadastroPetsPage{
 
   constructor(private ptService : PetsService, private route : Router) { }
 
-
   salvar(){
     this.ptService.salvar(this.pet);
     this.route.navigateByUrl('/')
